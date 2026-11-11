@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#f1e9dc">
+<meta name="description" content="Cuba en impresos / 古巴革命海报数字展览：革命图像、国际团结与视觉传播。">
+<title>CUBA EN IMPRESOS — 古巴革命海报数字展览</title>
+<style>
+:root{
+  --paper:#f1e9dc;--paper2:#e7dccb;--ink:#201b18;--muted:#786b60;
+  --red:#d83720;--red-dark:#8f201e;--orange:#f07827;--yellow:#f1c34b;
+  --blue:#17618a;--blue-dark:#103c59;--cream:#fff8ed;--line:rgba(32,27,24,.22);
+  --serif:Georgia,"Times New Roman","Noto Serif SC",serif;
+  --sans:Arial,Helvetica,"PingFang SC","Microsoft YaHei",sans-serif;
+  --max:1680px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:78px;scroll-snap-type:none}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.55;overflow-x:hidden}
+a{color:inherit}button{font:inherit}
+.progress{position:fixed;z-index:1000;left:0;right:0;top:0;height:4px;background:rgba(32,27,24,.1)}.progress span{display:block;height:100%;width:0;background:var(--red);transition:width .08s linear}
+.topbar{height:68px;position:fixed;z-index:900;left:0;right:0;top:4px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(18px,4.5vw,76px);background:rgba(241,233,220,.94);border-bottom:1px solid var(--line);backdrop-filter:blur(14px)}
+.brand{font-family:var(--serif);font-weight:900;letter-spacing:.1em;text-decoration:none;font-size:17px}.brand b{color:var(--red)}
+.nav{display:flex;gap:clamp(12px,2.5vw,36px);align-items:center}.nav a{text-decoration:none;font-size:11px;letter-spacing:.08em;color:var(--muted)}.nav a:hover{color:var(--red)}
+.nav .language{color:var(--red);border:1px solid var(--red);padding:7px 11px}
+.wrap{width:min(var(--max),calc(100% - clamp(36px,9vw,150px)));margin:auto}
+.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:.2em;color:var(--red);font-weight:800}
+.cn{display:block;font-weight:600;letter-spacing:.015em}.es{display:block;font-family:var(--serif);font-style:italic;font-weight:400;opacity:.78;letter-spacing:.01em}
+.hero{min-height:100svh;padding:150px 0 85px;position:relative;overflow:hidden;display:flex;align-items:center;background:var(--paper)}
+.hero:before{content:"";position:absolute;right:-7vw;top:13%;width:57vw;height:80%;background:var(--orange);clip-path:polygon(18% 0,100% 0,82% 100%,0 82%);opacity:.95}
+.hero:after{content:"1959";position:absolute;right:3vw;bottom:-8vw;font:900 clamp(180px,31vw,500px)/.8 var(--serif);letter-spacing:-.1em;color:rgba(32,27,24,.12);pointer-events:none}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.25fr .75fr;gap:6vw;align-items:end}
+.hero h1{font:900 clamp(66px,10.5vw,168px)/.77 var(--serif);letter-spacing:-.085em;text-transform:uppercase;margin:25px 0 28px;max-width:1000px}
+.hero h1 .red{color:var(--red);display:block}.hero-sub{font-size:clamp(20px,2.2vw,31px);font-family:var(--serif);margin-top:28px;max-width:760px}.hero-copy{max-width:480px;font-size:clamp(15px,1.2vw,18px);margin:0 0 16px}.hero-copy .es{margin-top:10px}.hero-stamp{width:170px;height:170px;border:2px solid var(--ink);border-radius:50%;display:grid;place-items:center;text-align:center;transform:rotate(9deg);margin:38px 0 0 auto;background:var(--yellow)}.hero-stamp b{font:900 26px/.95 var(--serif)}.hero-stamp small{display:block;font-size:9px;letter-spacing:.14em;margin-top:9px}.scroll-cue{margin-top:60px;font-size:10px;letter-spacing:.2em;display:flex;gap:14px;align-items:center}.scroll-cue:before{content:"";width:55px;border-top:2px solid var(--red)}
+.intro{padding:110px 0 120px;background:var(--paper2);position:relative;overflow:hidden}.section-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:55px}.section-head h2{font:800 clamp(42px,6.3vw,88px)/.9 var(--serif);letter-spacing:-.06em;margin:13px 0 0}.section-kicker{text-align:right;font-size:11px;letter-spacing:.14em;color:var(--red);font-weight:800}.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:8vw}.intro-lead{font:clamp(27px,3vw,43px)/1.2 var(--serif);max-width:680px}.intro-lead .es{margin-top:20px}.intro-body{font-size:15px;max-width:760px}.intro-body p{margin:0 0 20px}.intro-body p .es{margin-top:7px;color:#66584e}.timeline{display:grid;grid-template-columns:repeat(4,1fr);margin-top:75px;border-top:2px solid var(--ink)}.timepoint{padding:22px 20px 0 0;position:relative}.timepoint:before{content:"";position:absolute;width:13px;height:13px;top:-8px;left:0;border-radius:50%;background:var(--red);outline:4px solid var(--paper2)}.timepoint b{display:block;font:800 30px var(--serif);margin-bottom:9px}.timepoint span{display:block;font-size:13px;max-width:240px}.timepoint .es{margin-top:6px;font-size:12px}
+.wall-divider{min-height:420px;position:relative;overflow:hidden;display:flex;align-items:center;color:var(--cream);padding:65px 0;background:var(--red-dark)}
+.wall-divider.wall-b{background:var(--blue-dark)}.wall-divider:before{content:"";position:absolute;right:-5%;top:-35%;height:180%;width:55%;background:var(--orange);clip-path:polygon(45% 0,100% 0,55% 100%,0 100%);opacity:.95}.wall-divider.wall-b:before{background:var(--yellow);clip-path:polygon(30% 0,100% 0,70% 100%,0 100%)}
+.wall-divider:after{content:attr(data-roman);position:absolute;right:5vw;top:50%;transform:translateY(-50%);font:900 clamp(150px,27vw,410px)/.8 var(--serif);color:rgba(32,27,24,.22);letter-spacing:-.08em}
+.wall-content{position:relative;z-index:2;width:min(var(--max),calc(100% - clamp(36px,9vw,150px)));margin:auto}.wall-meta{font-size:11px;letter-spacing:.2em;font-weight:800}.wall-title{font:900 clamp(54px,8vw,118px)/.86 var(--serif);letter-spacing:-.065em;max-width:1100px;margin:16px 0 22px;text-transform:uppercase}.wall-title .cn{font:700 clamp(24px,3vw,42px)/1.2 var(--sans);letter-spacing:.05em;margin-top:22px}.wall-desc{font-size:16px;max-width:760px}.wall-desc .es{margin-top:7px}
+#works{background:var(--paper)}
+.work{min-height:94svh;scroll-margin-top:72px;border-bottom:1px solid var(--line);display:flex;align-items:stretch;position:relative}
+.work-inner{width:100%;max-width:1900px;margin:0 auto;min-height:94svh;display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr)}
+.art-column{background:#e9dfcf;min-width:0;padding:clamp(35px,4vw,72px) clamp(28px,4.2vw,76px);display:flex;flex-direction:column;justify-content:center;position:relative}
+.art-column:before{content:"";position:absolute;left:0;top:0;width:14px;height:100%;background:var(--orange)}
+.wall-two .art-column:before{background:var(--blue)}
+.art-meta{display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:11px;letter-spacing:.12em;color:var(--muted);margin-bottom:18px;font-weight:700}
+.poster-stage{height:clamp(560px,73vh,900px);min-height:560px;display:grid;place-items:center;position:relative;overflow:hidden;background:#d8cdbb;border:1px solid rgba(32,27,24,.2);box-shadow:14px 16px 0 rgba(32,27,24,.08);padding:22px}
+.poster-stage:before{content:"";position:absolute;inset:12px;border:1px solid rgba(32,27,24,.13);pointer-events:none}
+.poster-wrap{position:relative;display:inline-grid;place-items:center;max-width:100%;max-height:100%;z-index:1}
+.poster-wrap img{display:block;max-width:100%;max-height:calc(clamp(560px,73vh,900px) - 55px);width:auto;height:auto;object-fit:contain;box-shadow:0 16px 45px rgba(20,15,10,.19);transition:filter .35s,transform .35s}
+.markers{position:absolute;inset:0;z-index:3;pointer-events:none}.marker{position:absolute;left:var(--x);top:var(--y);transform:translate(-50%,-50%);display:flex;align-items:center;gap:8px}.marker i{width:28px;height:28px;border:2px solid #fff;border-radius:50%;background:rgba(216,55,32,.76);box-shadow:0 0 0 5px rgba(216,55,32,.22);display:grid;place-items:center;color:#fff;font:700 11px var(--sans);font-style:normal}.marker span{display:block;max-width:150px;background:var(--ink);color:white;padding:7px 9px;font-size:10px;line-height:1.25;letter-spacing:.02em;box-shadow:4px 4px 0 rgba(0,0,0,.12)}.marker.flip{flex-direction:row-reverse}.marker.hide{display:none}
+.image-fallback{display:none;min-height:420px;width:min(90%,440px);background:var(--red);color:white;align-items:center;justify-content:center;text-align:center;padding:32px;font:900 36px/1 var(--serif);z-index:1}.poster-stage.failed .poster-wrap{display:none}.poster-stage.failed .image-fallback{display:flex}
+.art-caption{display:flex;justify-content:space-between;gap:14px;align-items:center;padding-top:19px;font-size:12px;color:var(--muted)}.art-caption button{border:0;background:none;color:var(--red);text-decoration:underline;text-underline-offset:4px;cursor:pointer;font-size:11px;font-weight:800;letter-spacing:.08em}
+.work-copy{position:relative;isolation:isolate;background:var(--ink);color:var(--cream);padding:clamp(45px,5.4vw,92px) clamp(36px,5.3vw,90px);display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.work-copy:before{content:"";position:absolute;z-index:-1;left:-42px;top:-4%;height:108%;width:105px;background:var(--red);clip-path:polygon(56% 0,100% 0,44% 100%,0 100%)}
+.wall-two .work-copy:before{background:var(--yellow)}
+.work-copy:after{content:attr(data-big);position:absolute;z-index:-1;right:-10px;bottom:-80px;font:900 clamp(180px,25vw,390px)/.8 var(--serif);letter-spacing:-.1em;color:rgba(255,255,255,.055)}
+.work-index{font-size:13px;letter-spacing:.18em;color:var(--yellow);font-weight:800}.wall-two .work-index{color:#ffbd79}
+.work-title{font:900 clamp(40px,4.2vw,68px)/.93 var(--serif);letter-spacing:-.055em;margin:18px 0 8px;max-width:800px}.work-subtitle{font:italic clamp(15px,1.45vw,21px)/1.3 var(--serif);color:#d5c7b5;margin-bottom:23px}.work-subtitle .cn{font:600 15px var(--sans);font-style:normal;color:#fff2e3;margin-bottom:5px}
+.metadata{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:25px}.metadata span{border:1px solid rgba(255,248,237,.3);padding:6px 10px;font-size:10px;letter-spacing:.06em;color:#e5d8c8}.work-description{font-size:15px;line-height:1.65;color:#f0e6d8;max-width:760px;margin:0 0 28px}.work-description .es{margin-top:10px;color:#cfc0b1}
+.analysis-label{font-size:11px;letter-spacing:.15em;color:var(--yellow);font-weight:900;margin:5px 0 12px}.wall-two .analysis-label{color:#ffb47d}.analysis-label .cn{margin-bottom:3px}
+.layer-tabs{display:flex;flex-wrap:wrap;gap:7px;border-bottom:1px solid rgba(255,255,255,.28);padding-bottom:16px}.layer-tab{background:transparent;border:1px solid rgba(255,255,255,.27);color:#e0d5c8;padding:10px 13px;font-size:11px;cursor:pointer;transition:background .2s,color .2s,border-color .2s}.layer-tab:hover{border-color:var(--yellow);color:#fff}.layer-tab.active{background:var(--yellow);border-color:var(--yellow);color:var(--ink);font-weight:900}.wall-two .layer-tab.active{background:#ffb47d;border-color:#ffb47d}
+.analysis-panel{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:start;padding:22px 0 0;min-height:190px}.analysis-panel h4{font:800 clamp(24px,2.3vw,34px)/1.05 var(--serif);margin:0 0 13px;color:#fff5e9}.analysis-panel p{font-size:15px;line-height:1.55;max-width:650px;margin:0;color:#eee3d5}.analysis-panel p .es{margin-top:9px;color:#c9bdae}.analysis-count{font:800 14px var(--serif);color:var(--yellow);white-space:nowrap}.wall-two .analysis-count{color:#ffb47d}
+.work-foot{display:flex;justify-content:space-between;align-items:end;gap:18px;border-top:1px solid rgba(255,255,255,.25);padding-top:18px;margin-top:12px}.work-source{font-size:10px;color:#c9bdae;max-width:65%;line-height:1.5}.work-source a{color:#fff0dd;text-underline-offset:3px}.next-work{color:var(--yellow);font-size:11px;text-decoration:none;letter-spacing:.1em;font-weight:900;white-space:nowrap}.next-work:after{content:" ↓";font-size:18px}.wall-two .next-work{color:#ffb47d}
+.outro{position:relative;overflow:hidden;background:var(--red);color:var(--cream);padding:125px 0 110px}.outro:before{content:"";position:absolute;right:-4vw;top:0;width:42vw;height:100%;background:var(--yellow);clip-path:polygon(40% 0,100% 0,65% 100%,0 100%);opacity:.95}.outro:after{content:"SOLIDARIDAD";position:absolute;right:-2vw;bottom:-60px;font:900 clamp(80px,15vw,240px)/.8 var(--serif);color:rgba(32,27,24,.13);white-space:nowrap}.outro .wrap{position:relative;z-index:2}.outro h2{font:900 clamp(56px,8.8vw,130px)/.85 var(--serif);letter-spacing:-.075em;max-width:1100px;margin:20px 0 55px}.outro-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:8vw}.outro p{font-size:16px;max-width:720px;line-height:1.65}.outro p .es{margin-top:10px}.language-tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:32px}.language-tags span{border:1px solid rgba(255,248,237,.6);padding:8px 14px;border-radius:99px;font:italic 16px var(--serif)}.closing-line{font:clamp(27px,3vw,43px)/1.2 var(--serif);border-left:4px solid var(--yellow);padding-left:22px;max-width:620px}.closing-line .es{margin-top:18px}
+.sources{padding:85px 0 42px;background:var(--paper2)}.sources h2{font:800 clamp(32px,4vw,52px)/1 var(--serif);margin:13px 0 28px}.source-list{display:grid;grid-template-columns:1fr 1fr;gap:0 55px;border-top:1px solid var(--line)}.source-item{padding:16px 0;border-bottom:1px solid var(--line);font-size:12px;color:#5c5149;line-height:1.5}.source-item a{color:var(--red);font-weight:700}.source-note{font-size:11px;color:var(--muted);max-width:1100px;margin-top:25px;line-height:1.6}.source-note .es{margin-top:7px}footer{border-top:1px solid var(--line);padding:22px 0 34px;margin-top:60px;display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:10px;letter-spacing:.12em}
+.side-index{position:fixed;z-index:700;right:22px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:12px}.side-index a{width:9px;height:9px;border-radius:50%;background:rgba(32,27,24,.3);border:1px solid var(--paper);box-shadow:0 0 0 1px rgba(32,27,24,.15);display:block}.side-index a.active{background:var(--red);transform:scale(1.5)}
+.modal{position:fixed;z-index:1200;inset:0;background:rgba(12,10,9,.95);display:none;place-items:center;padding:35px}.modal.open{display:grid}.modal img{max-width:90vw;max-height:86vh;object-fit:contain}.modal-close{position:absolute;right:22px;top:18px;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.7);background:transparent;color:#fff;font-size:27px;cursor:pointer}.modal-caption{position:absolute;bottom:14px;color:#eee;font-size:11px;letter-spacing:.1em;text-align:center}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}.reveal.visible{opacity:1;transform:none}
+@media(max-width:1050px){.hero-grid{grid-template-columns:1fr .7fr}.work-inner{grid-template-columns:1fr 1fr}.art-column{padding:32px 26px}.work-copy{padding:42px 35px}.poster-stage{height:66vh;min-height:500px}.poster-wrap img{max-height:calc(66vh - 55px)}.work-title{font-size:clamp(34px,4.5vw,52px)}.analysis-panel{min-height:220px}}
+@media(max-width:800px){.nav a:not(.language){display:none}.hero{padding:125px 0 65px}.hero:before{right:-28vw;top:37%;width:90vw;height:54%}.hero-grid,.intro-grid,.outro-grid{grid-template-columns:1fr}.hero-stamp{width:125px;height:125px;margin:28px 0 0}.hero-stamp b{font-size:20px}.hero-copy{max-width:670px}.section-head{align-items:start;flex-direction:column}.section-kicker{text-align:left}.timeline{grid-template-columns:1fr 1fr;row-gap:28px}.wall-divider{min-height:300px}.wall-divider:before{width:65%;right:-15%}.work{min-height:0}.work-inner{grid-template-columns:1fr;min-height:0}.art-column{padding:42px 28px 32px}.poster-stage{height:min(78vh,760px);min-height:480px}.poster-wrap img{max-height:calc(min(78vh,760px) - 55px)}.work-copy{padding:48px 30px 44px}.work-copy:before{left:0;top:-35px;width:100%;height:75px;clip-path:polygon(0 48%,100% 0,100% 48%,0 100%)}.analysis-panel{min-height:0}.side-index{right:10px;gap:9px}.side-index a{width:7px;height:7px}}
+@media(max-width:520px){.topbar{height:58px;padding:0 16px}.brand{font-size:13px}.nav .language{font-size:9px;padding:6px 8px}.wrap,.wall-content{width:calc(100% - 34px)}.hero h1{font-size:clamp(55px,16vw,86px)}.hero-sub{font-size:20px}.hero-copy{font-size:14px}.intro{padding:78px 0}.intro-lead{font-size:28px}.intro-body{font-size:14px}.timeline{gap:14px}.timepoint b{font-size:25px}.timepoint span{font-size:12px}.wall-divider{min-height:275px}.wall-title{font-size:54px}.wall-title .cn{font-size:23px}.wall-desc{font-size:14px}.art-column{padding:28px 17px 24px}.poster-stage{min-height:420px;height:60vh;padding:15px}.poster-wrap img{max-height:calc(60vh - 45px)}.art-meta{font-size:9px}.art-caption{font-size:10px}.work-copy{padding:43px 20px 34px}.work-title{font-size:41px}.work-description,.analysis-panel p{font-size:14px}.analysis-panel{grid-template-columns:1fr;gap:5px}.analysis-count{order:-1}.layer-tabs{gap:5px}.layer-tab{padding:8px 9px;font-size:10px}.work-foot{align-items:start;flex-direction:column}.work-source{max-width:100%}.outro{padding:85px 0}.outro h2{font-size:58px}.outro p{font-size:14px}.closing-line{font-size:29px}.source-list{grid-template-columns:1fr}footer{flex-direction:column}.side-index{display:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<div class="progress"><span id="progressBar"></span></div>
+<header class="topbar">
+  <a class="brand" href="#top">CUBA <b>/</b> EN IMPRESOS</a>
+  <nav class="nav" aria-label="Navegación principal / 主导航">
+    <a href="#intro">CONTEXTO · 背景</a><a href="#wall-a">MURO A · 展墙 A</a><a href="#wall-b">MURO B · 展墙 B</a><a href="#epilogue">CIERRE · 结语</a><a class="language" href="#top">中文 / ES</a>
+  </nav>
+</header>
+<nav class="side-index" id="sideIndex" aria-label="Progreso de la exposición / 展览进度">
+  <a href="#top" title="Inicio / 首页"></a><a href="#intro" title="Contexto / 背景"></a>
+  <a href="#work-1" title="Obra 1"></a><a href="#work-2" title="Obra 2"></a><a href="#work-3" title="Obra 3"></a>
+  <a href="#wall-b" title="Muro B"></a><a href="#work-4" title="Obra 4"></a><a href="#work-5" title="Obra 5"></a><a href="#work-6" title="Obra 6"></a><a href="#epilogue" title="Cierre"></a>
+</nav>
+<main>
+<section class="hero" id="top">
+ <div class="wrap hero-grid">
+  <div>
+   <div class="eyebrow">Exposición digital · 展览档案 / 1959—1980</div>
+   <h1>THE<br><span class="red">REVOLUTION</span> IN PRINT</h1>
+   <div class="hero-sub"><span class="cn">古巴革命的视觉语言</span><span class="es">La revolución cubana en imágenes impresas</span></div>
+   <div class="scroll-cue">DESLIZA PARA ENTRAR · 向下滚动进入展览</div>
+  </div>
+  <div>
+   <p class="hero-copy"><span class="cn">海报不只是革命的图像记录。它将政治理想转化为可复制、可传播、可被公众阅读的视觉语言。</span><span class="es">El cartel no solo documenta una revolución: convierte sus ideales políticos en un lenguaje visual reproducible, circulante y público.</span></p>
+   <p class="hero-copy"><span class="cn">本展览以六件作品为线索，观察革命人物、反帝叙事与国际团结如何进入古巴的平面设计。</span><span class="es">A través de seis obras, esta exposición explora cómo las figuras revolucionarias, el discurso antiimperialista y la solidaridad internacional entraron en el diseño gráfico cubano.</span></p>
+   <div class="hero-stamp"><div><b>IMÁGENES<br>EN ACCIÓN</b><small>IMAGES IN ACTION<br>图像参与行动</small></div></div>
+  </div>
+ </div>
+</section>
+<section class="intro" id="intro">
+ <div class="wrap">
+  <div class="section-head reveal"><div><div class="eyebrow">01 / Contexto histórico · 历史背景</div><h2>Antes de la imagen,<br>la revolución.</h2></div><div class="section-kicker">SALA DE INTRODUCCIÓN<br>序厅 · INTRODUCTION</div></div>
+  <div class="intro-grid reveal">
+   <div class="intro-lead"><span class="cn">革命改变的不只是政权，也改变一个社会如何观看自己，以及如何向世界发声。</span><span class="es">Una revolución transforma quién gobierna, pero también cómo una sociedad se mira a sí misma y cómo habla al mundo.</span></div>
+   <div class="intro-body">
+    <p><span class="cn">1952 年，巴蒂斯塔通过军事政变重新掌权。此后，反对运动持续发展。以“七二六运动”等力量为代表的武装斗争，最终促使巴蒂斯塔于 1959 年 1 月 1 日逃离古巴，革命力量取得胜利。</span><span class="es">En 1952, Fulgencio Batista volvió al poder mediante un golpe militar. La oposición creció durante la década y la lucha encabezada, entre otros, por el Movimiento 26 de Julio culminó con la huida de Batista el 1 de enero de 1959.</span></p>
+    <p><span class="cn">革命之后，文化被视为重塑公共生活的重要力量。古巴电影艺术与工业研究所（ICAIC）于 1959 年 3 月成立，电影海报也逐渐摆脱单纯的商业宣传功能，成为实验性插画、字体与印刷语言的场域。</span><span class="es">Tras la victoria, la cultura se convirtió en un espacio central para transformar la vida pública. El ICAIC se fundó en marzo de 1959; sus carteles cinematográficos fueron mucho más que publicidad: funcionaron como laboratorios de ilustración, tipografía e impresión.</span></p>
+    <p><span class="cn">1966 年，哈瓦那召开三大洲会议，推动亚非拉人民团结组织（OSPAAAL）成立。它通过《三大洲》杂志及随刊海报，向不同国家和语言的读者传播反殖民、反帝国主义与民族解放运动的信息。</span><span class="es">En 1966, la Conferencia Tricontinental de La Habana impulsó la creación de OSPAAAL. A través de la revista <em>Tricontinental</em> y sus carteles insertos, la organización difundió mensajes anticoloniales, antiimperialistas y de apoyo a los movimientos de liberación.</span></p>
+   </div>
+  </div>
+  <div class="timeline reveal">
+   <div class="timepoint"><b>1952</b><span class="cn">巴蒂斯塔发动军事政变。</span><span class="es">Golpe militar de Batista.</span></div>
+   <div class="timepoint"><b>1959</b><span class="cn">革命胜利；ICAIC 于 3 月成立。</span><span class="es">Triunfo revolucionario; fundación del ICAIC en marzo.</span></div>
+   <div class="timepoint"><b>1966</b><span class="cn">哈瓦那三大洲会议；OSPAAAL 成立。</span><span class="es">Conferencia Tricontinental y creación de OSPAAAL.</span></div>
+   <div class="timepoint"><b>1967–80</b><span class="cn">海报通过电影、杂志与国际网络流通。</span><span class="es">Los carteles circulan por el cine, las revistas y redes internacionales.</span></div>
+  </div>
+ </div>
+</section>
+<section class="wall-divider wall-a" id="wall-a" data-roman="01">
+ <div class="wall-content"><div class="wall-meta">PRIMER MURO / 第一展墙 · 01—03</div><h2 class="wall-title">THE FACE<br>OF REVOLUTION<span class="cn">革命的面孔：人物、记忆与斗争</span></h2><div class="wall-desc"><span class="cn">革命人物如何成为可识别、可复制、可传颂的视觉符号？本展墙聚焦切·格瓦拉的形象，以及图像如何把个人转化为集体记忆。</span><span class="es">¿Cómo se convierte una figura revolucionaria en un símbolo reconocible y reproducible? Este muro examina la imagen del Che Guevara y el paso del retrato individual a la memoria colectiva.</span></div></div>
+</section>
+<div id="works-a"></div>
+<section class="wall-divider wall-b" id="wall-b" data-roman="02">
+ <div class="wall-content"><div class="wall-meta">SEGUNDO MURO / 第二展墙 · 04—06</div><h2 class="wall-title">SOLIDARITY<br>WITHOUT BORDERS<span class="cn">没有边界的团结：从亚洲到非洲</span></h2><div class="wall-desc"><span class="cn">当海报离开古巴，它如何向陌生的观众发出邀请？本展墙关注多语言传播、地理隐喻，以及海报如何成为跨国政治团结的媒介。</span><span class="es">¿Qué ocurre cuando el cartel sale de Cuba y se dirige a públicos lejanos? Este muro explora la circulación multilingüe, las metáforas geográficas y el cartel como medio de solidaridad transnacional.</span></div></section>
+<div id="works-b"></div>
+<section class="outro" id="epilogue">
+ <div class="wrap">
+  <div class="eyebrow" style="color:#ffe08a">03 / Epílogo · 展览结语</div>
+  <h2>THE IMAGE<br>KEEPS MOVING.</h2>
+  <div class="outro-grid">
+   <div>
+    <p><span class="cn">在古巴，海报进入电影院、街道与公共生活；在 OSPAAAL 的传播网络中，它又被折叠进杂志，跨越海洋与语言边界，抵达亚洲、非洲和拉丁美洲的读者。</span><span class="es">En Cuba, los carteles ocuparon cines, calles y espacios públicos. En la red de OSPAAAL, se plegaron dentro de revistas y cruzaron océanos y fronteras lingüísticas para llegar a lectores de Asia, África y América Latina.</span></p>
+    <p><span class="cn">这些作品并非一种单一风格：它们在肖像、拼贴、重复、几何隐喻和醒目字体之间不断变化。它们共同相信，图像可以被观看，也可以被携带、传递，并参与社会行动。</span><span class="es">No existe un único estilo: estas obras combinan retrato, fotomontaje, repetición, metáforas geométricas y tipografía contundente. Comparten una convicción: una imagen no solo se contempla; también se transporta, se comparte y participa en la acción social.</span></p>
+    <div class="language-tags"><span>Solidaridad</span><span>Solidarity</span><span>Solidarité</span><span>التضامن</span></div>
+   </div>
+   <div class="closing-line"><span class="cn">海报不只是政治时刻的图像。它也是那个时代学会表达自己的方式之一。</span><span class="es">El cartel no es solo la imagen de un momento político. Es también una de las formas en que ese momento aprendió a hablar.</span></div>
+  </div>
+ </div>
+</section>
+<section class="sources" id="sources"><div class="wrap">
+ <div class="eyebrow">Bibliografía y fichas · 参考资料与馆藏记录</div><h2>Fuentes / 资料来源</h2>
+ <div class="source-list">
+  <div class="source-item">Contexto histórico · 历史背景：<a href="https://www.history.com/articles/cuban-revolution" target="_blank" rel="noopener">HISTORY — Cuban Revolution</a></div>
+  <div class="source-item">ICAIC y cartel cinematográfico · ICAIC 与电影海报：<a href="https://library.georgetown.edu/exhibition/soy-cuba-art-film-poster-cuba" target="_blank" rel="noopener">Georgetown University Library — Soy Cuba</a></div>
+  <div class="source-item">OSPAAAL: historia y circulación · OSPAAAL 历史与传播：<a href="https://www.vam.ac.uk/articles/solidarity-and-design-an-introduction-to-ospaaal" target="_blank" rel="noopener">V&A — Solidarity and Design</a></div>
+  <div class="source-item">Lenguaje visual de OSPAAAL · OSPAAAL 视觉语言：<a href="https://www.vam.ac.uk/articles/revolutionary-design-ospaaal-and-the-art-of-the-poster" target="_blank" rel="noopener">V&A — Revolutionary Design</a></div>
+  <div class="source-item">Asia Solidarity Week · 亚洲团结周海报：<a href="https://thetricontinental.org/dossier-tricontinental-conference-60/" target="_blank" rel="noopener">Tricontinental Institute — Week of Solidarity with the Peoples of Asia (1968)</a></div>
+  <div class="source-item">Asia Week 同名海报的另一馆藏记录 · 同主题不同版本 / Registro de otra versión del mismo tema:<a href="https://www.metmuseum.org/art/collection/search/930201" target="_blank" rel="noopener">The Met — Jesús Forjans, 1969</a></div>
+  <div class="source-item">Che, Comandante Amigo · 切·司令员，朋友：<a href="https://scrcguides.libraries.wm.edu/repositories/2/archival_objects/106800" target="_blank" rel="noopener">College of William & Mary — Cuban Film Poster Collection</a></div>
+  <div class="source-item">Long Live Free Zimbabwe · 津巴布韦自由万岁：<a href="https://ariadnaediciones.cl/images/pdf/LaImagenTricontinental.pdf" target="_blank" rel="noopener">La imagen tricontinental</a></div>
+  <div class="source-item">Create Two, Three… Many Vietnams · 越南海报：<a href="https://www.vam.ac.uk/articles/revolutionary-design-ospaaal-and-the-art-of-the-poster" target="_blank" rel="noopener">V&A — Object E.310-2021</a></div>
+ </div>
+ <p class="source-note"><span class="cn">说明：三张由观众提供的海报图像用于本次课堂展示原型；其余作品图像从馆藏或相关机构页面外链加载。正式公开发布或商业使用前，请逐一核查图像版权及机构使用条款。《Long Live Free Zimbabwe》的二手出版物将设计日期记为 1978，而本次提供的图像可见“/80”标记，因此展品年代暂记为 1978–80，仍需进一步核对具体版本。亚洲团结周海报按当前图像对应的资料标注为 1968 年、作者未详；大都会艺术博物馆另藏同主题的 Jesús Forjans 1969 年作品，不能直接视为同一版本。</span><span class="es">Nota: tres imágenes fueron aportadas para este prototipo académico; las demás se cargan desde páginas de colecciones o instituciones. Antes de publicar o reutilizar las imágenes con fines comerciales, comprueba sus derechos y condiciones de uso. Una publicación secundaria fecha el diseño de <em>Long Live Free Zimbabwe</em> en 1978, mientras que el ejemplar aportado muestra la marca “/80”; por eso se indica provisionalmente 1978–80. La versión de Asia aquí mostrada se identifica como obra de OSPAAAL de 1968 y autor desconocido; el Met conserva además otra obra sobre el mismo evento, atribuida a Jesús Forjans y fechada en 1969, que no debe confundirse con esta versión.</span></p>
+ <footer><span>CUBA / EN IMPRESOS · 古巴革命海报数字展览</span><span>ARCHIVO VISUAL · 视觉档案 · 1959—1980</span></footer>
+</div></section>
+</main>
+<div class="modal" id="imageModal" role="dialog" aria-modal="true" aria-label="Vista ampliada / 图片放大"><button class="modal-close" id="modalClose" aria-label="Cerrar / 关闭">×</button><img id="modalImage" src="" alt=""><div class="modal-caption" id="modalCaption"></div></div>
+<script>
+const posters = [
+{
+ id:1,wall:1,title:"Che, Comandante Amigo",titleCn:"切，司令员，朋友",subtitle:"Documental cubano en colores · Dir. Bernabé Hernández",year:"1978",artist:"Antonio Fernández Reboiro",institution:"Cine cubano / 古巴电影",medium:"Cartel cinematográfico / 电影海报",image:"assets/che-comandante-amigo.webp",alt:"Póster de Che, Comandante Amigo: retrato estilizado del Che sobre fondo rosa con marco geométrico rojo, azul y blanco。",source:"College of William & Mary · Cuban Film Poster Collection",sourceUrl:"https://scrcguides.libraries.wm.edu/repositories/2/archival_objects/106800",
+ introCn:"这是一张古巴纪录片《Che, Comandante Amigo》的电影海报。Reboiro 没有铺陈复杂情节，而是将切·格瓦拉的面孔转化为高度概括的图像标识。它属于电影海报，但其主体形象已经进入革命记忆与政治象征的语境。",introEs:"Este cartel anuncia el documental cubano <em>Che, Comandante Amigo</em>. Reboiro no resume una trama compleja: convierte el rostro del Che en un emblema gráfico condensado. Es un cartel cinematográfico cuya figura central ya pertenece al terreno de la memoria revolucionaria y del símbolo político.",
+ layers:[
+  {key:"COLOR · 色彩",title:"三色对撞 / Contraste cromático",cn:"黑色与橙色构成强烈的人像对比，粉色背景和红、白、蓝边框则把肖像包裹成一个清晰的视觉场。有限色彩让人物从远处也能被迅速辨认。",es:"El negro y el naranja construyen un contraste intenso; el fondo rosa y el marco rojo, blanco y azul delimitan la imagen como un campo visual autónomo. La paleta reducida hace que el rostro se reconozca a distancia.",markers:[{x:50,y:53,label:"人像 / Rostro"},{x:50,y:8,label:"边框 / Marco",flip:true}]},
+  {key:"PORTRAIT · 肖像",title:"人物成为标志 / El rostro como emblema",cn:"肖像经过剪影化与色块概括，削弱了写实细节，强化目光、轮廓和面部朝向。观众看到的不只是一个具体的人，也是一种已经被公共传播塑造的革命形象。",es:"El retrato se simplifica mediante siluetas y planos de color. Se reducen los detalles realistas y se enfatizan la mirada, el contorno y la orientación del rostro: no vemos solo a una persona, sino una imagen revolucionaria construida por la circulación pública.",markers:[{x:49,y:48,label:"面部焦点 / Foco facial"}]},
+  {key:"FRAME · 边框",title:"边框建立秩序 / El marco organiza",cn:"红、白、蓝色的多重边框把人物肖像嵌入一个近似徽章或纪念牌的结构中。边框既稳定版面，也赋予图像一种正式、纪念性的展示感。",es:"Los marcos concéntricos rojos, blancos y azules insertan el retrato en una estructura cercana a una insignia o placa conmemorativa. El borde estabiliza la composición y aporta un tono ceremonial.",markers:[{x:7,y:48,label:"外框 / Borde",flip:false},{x:92,y:48,label:"内框 / Marco",flip:true}]}
+ ]
+},
+{
+ id:2,wall:1,title:"Create Two, Three… Many Vietnams",titleCn:"创造两个、三个……更多的越南",subtitle:"That is the watchword · Consigna internacional",year:"1967",artist:"Alfredo Rostgaard",institution:"OSPAAAL",medium:"Cartel impreso / 印刷海报",image:"https://nmdigital.unm.edu/digital/api/singleitem/image/Norling/137/default.jpg",alt:"Cartel de OSPAAAL con un mosaico repetido de imágenes fotográficas del Che Guevara y un lema internacionalista.",source:"V&A · Object E.310-2021",sourceUrl:"https://www.vam.ac.uk/articles/revolutionary-design-ospaaal-and-the-art-of-the-poster",
+ introCn:"这张海报是 OSPAAAL 随《三大洲》杂志发行的早期代表作之一。它将切·格瓦拉的照片不断复制、排列，使一个人的形象变成密集的图像矩阵，与标题中的“更多的越南”形成呼应。",introEs:"Uno de los primeros carteles distribuidos con la revista <em>Tricontinental</em>. Rostgaard multiplica y ordena fotografías del Che Guevara hasta convertir un retrato individual en una matriz colectiva, en diálogo con la consigna “muchos Vietnams”.",
+ layers:[
+  {key:"REPETITION · 重复",title:"重复制造集体 / La repetición crea colectividad",cn:"同一人物被反复切分、复制和排列，图像从肖像变成节奏。重复在视觉上暗示扩散、增殖和持续抵抗，也让观众把单个英雄读成集体力量。",es:"La misma figura se recorta, se copia y se ordena hasta convertirse en ritmo. La repetición sugiere expansión, multiplicación y resistencia persistente; el héroe individual se lee como una fuerza colectiva.",markers:[{x:48,y:55,label:"复制矩阵 / Matriz repetida"}]},
+  {key:"SLOGAN · 口号",title:"口号成为行动指令 / La consigna como llamada",cn:"“创造两个、三个……更多的越南”并非中性说明，而是一句明确的政治号召。文字与图像共同形成传播单元：读者先看到重复的面孔，再读到扩散式的口号。",es:"“Crear dos, tres… muchos Vietnams” no es una descripción neutral, sino una consigna política. Texto e imagen forman una sola unidad de comunicación: primero aparece la multiplicación visual y después la llamada a la acción.",markers:[{x:50,y:11,label:"口号 / Consigna"}]},
+  {key:"PRINT · 印刷",title:"有限资源中的视觉效率 / Eficacia con pocos recursos",cn:"有限色数、重复模块和相对简单的图像素材共同形成鲜明风格。视觉强度不是来自复杂工艺，而是来自图像选择、剪裁与排列方式。",es:"La paleta limitada, los módulos repetidos y un conjunto reducido de fotografías producen una identidad contundente. La fuerza visual no depende de una técnica compleja, sino de la selección, el recorte y la organización de las imágenes.",markers:[{x:50,y:54,label:"有限色板 / Paleta limitada"}]}
+ ]
+},
+{
+ id:3,wall:1,title:"Day of the Heroic Guerrilla Fighter",titleCn:"英雄游击战士纪念日",subtitle:"October 8 · Día del Guerrillero Heroico",year:"1968",artist:"Helena Serrano",institution:"OSPAAAL",medium:"Cartel de solidaridad / 团结海报",image:"https://walker-web.imgix.net/cms/Serrano_Dia-del-guerrillero-heroico.jpg",alt:"Cartel de Helena Serrano de 1968 para el Día del Guerrillero Heroico: el rostro del Che se integra en una composición geométrica de colores intensos.",source:"V&A · Object E.472-2018",sourceUrl:"https://www.vam.ac.uk/articles/solidarity-and-design-an-introduction-to-ospaaal",
+ introCn:"这张 1968 年的海报纪念 10 月 8 日“英雄游击战士纪念日”。Helena Serrano 将切·格瓦拉的形象置于高饱和度的几何构图中，使纪念性肖像与光学艺术的视觉震动结合起来。",introEs:"Este cartel de 1968 conmemora el 8 de octubre, Día del Guerrillero Heroico. Helena Serrano sitúa la figura del Che en una composición geométrica de alto contraste, combinando el retrato con una vibración visual cercana al arte óptico.",
+ layers:[
+  {key:"OPTICAL · 视觉震动",title:"图像像波纹一样扩散 / La imagen vibra y se expande",cn:"重复的矩形、色块和轮廓形成视觉脉冲，让静态肖像产生运动感。观众的视线在中心人物与外部几何结构之间来回移动。",es:"La repetición de rectángulos, planos de color y contornos produce un pulso visual. El retrato parece moverse, y la mirada oscila entre la figura central y la estructura geométrica que la rodea.",markers:[{x:49,y:18,label:"几何节奏 / Ritmo geométrico"},{x:50,y:72,label:"视觉回响 / Eco visual"}]},
+  {key:"ICON · 革命符号",title:"肖像超越个人 / El retrato supera al individuo",cn:"切·格瓦拉的脸在这里不仅指向个人生平，也被组织成纪念仪式的视觉中心。周年纪念日将人物形象转化为可重复传播的公共符号。",es:"El rostro del Che no remite únicamente a una biografía: se convierte en el centro visual de un ritual conmemorativo. La fecha anual transforma la figura en un símbolo público reproducible.",markers:[{x:50,y:48,label:"肖像中心 / Centro del retrato"}]},
+  {key:"COLOR · 色彩",title:"高饱和度建立紧张感 / La saturación crea tensión",cn:"橙、洋红、蓝等色彩并置，不追求自然主义，而是强化对比与视觉辨识度。色彩让纪念主题具有强烈的公共传播属性。",es:"El naranja, el magenta y el azul no buscan naturalismo: intensifican el contraste y la identificación inmediata. El color convierte la conmemoración en una imagen de gran impacto público.",markers:[{x:13,y:48,label:"色块对比 / Contraste"},{x:85,y:48,label:"色彩结构 / Campo cromático",flip:true}]}
+ ]
+},
+{
+ id:4,wall:2,title:"Week of Solidarity with the Peoples of Asia",titleCn:"世界声援亚洲人民周",subtitle:"30 September — 6 October · Semana de solidaridad",year:"1968",artist:"Autor desconocido / 作者待考",institution:"OSPAAAL",medium:"Cartel offset multilingüe / 多语种胶印海报",image:"assets/asia-solidarity-week.webp",alt:"海报以蓝色为底，红色大字写有 asia，下方圆形地球图像叠加蓝色经纬网格与亚洲人物肖像。",source:"Tricontinental Institute · Dossier 95 (2025)",sourceUrl:"https://thetricontinental.org/dossier-tricontinental-conference-60/",
+ introCn:"你提供的这张版本以蓝色为底，红色大字“asia”占据上半部；下方圆形图像将不同人物肖像置于蓝色经纬网格之中。现有资料将这件版本标注为 OSPAAAL、1968、作者未详。它与其他年份、署名不同的亚洲团结周海报不应混为同一件作品。",introEs:"En esta versión, el gran rótulo rojo “asia” domina el campo azul. Debajo, varios rostros aparecen dentro de un globo atravesado por una retícula azul. La fuente consultada identifica esta versión como un cartel de OSPAAAL de 1968 y de autor desconocido; conviene no confundirla con otras versiones del mismo evento, fechadas y atribuidas de otro modo.",
+ layers:[
+  {key:"TYPE · 字体",title:"标题先于叙事 / El título antes que la narración",cn:"红色“asia”以宽厚、近似模块化的字形占据视觉中心。它既是地理名称，也是一个醒目的图形标志，让观众先识别主题，再进入下方的复杂图像。",es:"La palabra “asia”, en rojo y con letras anchas casi modulares, ocupa el centro visual. Es a la vez un nombre geográfico y un emblema: primero se reconoce el tema y después se explora la imagen inferior.",markers:[{x:50,y:27,label:"标题 / Titular"}]},
+  {key:"GLOBE · 地球",title:"经纬网格连接多重面孔 / La retícula conecta rostros",cn:"蓝色经纬线覆盖圆形图像，把人物肖像组织在同一个地理框架内。网格象征跨地域的连接，也使“亚洲”呈现为由不同人群组成的集合，而非单一面孔。",es:"La retícula azul atraviesa el globo y reúne distintos retratos dentro de un mismo marco geográfico. La cuadrícula sugiere conexión transregional y presenta Asia como una pluralidad de pueblos, no como un solo rostro.",markers:[{x:49,y:67,label:"经纬网格 / Retícula"},{x:73,y:58,label:"人物群像 / Rostros",flip:true}]},
+  {key:"LANGUAGE · 语言",title:"多语种让声援跨越边界 / La traducción cruza fronteras",cn:"西班牙语、英语、法语与阿拉伯语并置，说明海报预设了跨语言的读者。不同语种不是外围注释，而是国际传播机制的一部分。",es:"El español, el inglés, el francés y el árabe aparecen juntos. El cartel presupone lectores de distintas lenguas: la traducción no es una nota marginal, sino parte de su mecanismo de circulación internacional.",markers:[{x:50,y:8,label:"多语种信息 / Texto multilingüe"}]}
+ ]
+},
+{
+ id:5,wall:2,title:"Day of Solidarity with the Congo",titleCn:"刚果团结日",subtitle:"13 February · Día de solidaridad con el Congo",year:"1972",artist:"Alfredo Rostgaard",institution:"OSPAAAL",medium:"Cartel offset / 胶印海报",image:"https://www.liverpoolmuseums.org.uk/sites/default/files/import-blog-articles/5.-Day-of-Solidarity-with-the-Congo-1972.-By-Alfredo-Juan-Gonzalez-Rostgaard_1.jpg",alt:"OSPAAAL 刚果团结日海报：红色的人物侧脸与非洲大陆轮廓合并，底部有多语种活动日期。",source:"National Museums Liverpool · Art of Solidarity",sourceUrl:"https://www.liverpoolmuseums.org.uk/stories/collectors-eye-ospaaal-posters",
+ introCn:"Rostgaard 将非洲大陆轮廓与 Patrice Lumumba 的侧脸叠合，使地理空间获得人的面孔。海报纪念刚果团结日，也把反殖民斗争与跨国声援联系起来。",introEs:"Rostgaard fusiona el contorno del continente africano con el perfil de Patrice Lumumba. La geografía adquiere un rostro humano. El cartel conmemora el Día de Solidaridad con el Congo y conecta la lucha anticolonial con el apoyo transnacional.",
+ layers:[
+  {key:"METAPHOR · 隐喻",title:"大陆与人脸合为一体 / Continente y rostro se funden",cn:"非洲大陆的轮廓与 Lumumba 的面部相互嵌合，形成双重阅读：它既是一张人物肖像，也是一幅地理图像。政治主张被压缩进一个简洁的视觉隐喻。",es:"El contorno de África y el perfil de Lumumba se encajan en una doble lectura: es a la vez un retrato y un mapa. Una posición política se concentra en una metáfora visual sencilla.",markers:[{x:51,y:43,label:"大陆 / Continente"},{x:59,y:52,label:"人物侧脸 / Perfil",flip:true}]},
+  {key:"COLOR · 色彩",title:"少量色彩形成强烈轮廓 / Pocos colores, silueta intensa",cn:"红色面部与深蓝色大陆形成高对比，浅色背景则留出呼吸空间。有限色彩使复杂的政治地理关系转化为容易识别的整体形象。",es:"El rostro rojo contrasta con el azul oscuro del continente, mientras el fondo claro deja respirar la imagen. Una paleta reducida convierte una relación geopolítica compleja en una forma reconocible.",markers:[{x:50,y:47,label:"红与蓝 / Rojo y azul"}]},
+  {key:"MESSAGE · 信息",title:"纪念日期成为共同地址 / La fecha como convocatoria",cn:"底部的多语种日期信息把视觉隐喻落实为具体行动邀请：观众不仅观看一个象征，也被告知何时、为何表达声援。",es:"La fecha multilingüe en la parte inferior convierte la metáfora en una invitación concreta: el público no solo contempla un símbolo, también recibe una indicación de cuándo y por qué expresar solidaridad.",markers:[{x:50,y:92,label:"日期信息 / Fecha"}]}
+ ]
+},
+{
+ id:6,wall:2,title:"Long Live Free Zimbabwe",titleCn:"自由的津巴布韦万岁",subtitle:"Larga vida a Zimbabue libre · OSPAAAL",year:"1978–80",artist:"Lázaro Abreu Padrón",institution:"OSPAAAL",medium:"Cartel de solidaridad / 团结海报",image:"assets/long-live-free-zimbabwe.webp",alt:"橙色背景的 OSPAAAL 海报，一名女性高举写有 Long Live Free Zimbabwe 的白色标语牌。",source:"La imagen tricontinental · reproducción del ejemplar aportado",sourceUrl:"https://ariadnaediciones.cl/images/pdf/LaImagenTricontinental.pdf",
+ introCn:"这张海报把一名女性高举标语牌的动作置于橙色背景之上。作品没有复杂的叙事场景，而是让身体姿态、醒目的口号与强烈色彩直接构成政治态度。图像所支持的是津巴布韦反殖民、争取独立的诉求。",introEs:"Una mujer alza un cartel sobre un fondo naranja. No hay una escena narrativa compleja: el gesto corporal, la consigna contundente y el color construyen una posición política directa. La imagen expresa apoyo a la lucha anticolonial y por la independencia de Zimbabue.",
+ layers:[
+  {key:"SLOGAN · 口号",title:"语言成为被举起的行动 / La consigna se levanta",cn:"“LONG LIVE FREE ZIMBABWE”占据标语牌的大部分空间。文字不是附属说明，而是被人物高举、进入公共视野的核心行动。粗重字形让信息在远距离仍然清晰。",es:"“LONG LIVE FREE ZIMBABWE” ocupa casi toda la pancarta. El texto no es una nota secundaria: la figura lo levanta y lo lleva al espacio público. Las letras pesadas conservan su legibilidad a distancia.",markers:[{x:50,y:31,label:"核心口号 / Consigna central"}]},
+  {key:"GESTURE · 姿态",title:"身体成为传播媒介 / El cuerpo como medio",cn:"人物双臂向上伸展，身体既支撑标语牌，也构成视觉上的垂直力量。举牌动作把抽象的政治主张转化为可感知的公共姿态。",es:"Los brazos extendidos sostienen la pancarta y generan una fuerte verticalidad. El gesto transforma una reivindicación política abstracta en una postura pública y reconocible.",markers:[{x:47,y:76,label:"举牌动作 / Gesto de alzar"}]},
+  {key:"COLOR · 色彩",title:"橙色制造即时冲击 / El naranja produce impacto",cn:"大面积橙色背景与黑白人物、红色口号形成鲜明对照。背景几乎不提供叙事细节，而是把全部注意力推向标语与举牌者。",es:"El fondo naranja contrasta con la figura en negro y blanco y con las letras rojas. Al reducir los detalles del entorno, la composición concentra toda la atención en la pancarta y quien la sostiene.",markers:[{x:12,y:17,label:"橙色背景 / Fondo naranja"},{x:78,y:43,label:"红色强调 / Acento rojo",flip:true}]}
+ ]
+}
+];
+const makeWork = p => `
+<article class="work ${p.wall===2?'wall-two':'wall-one'}" id="work-${p.id}" data-work="${p.id}">
+ <div class="work-inner">
+  <div class="art-column">
+   <div class="art-meta"><span>${p.wall===1?'MURO 01 · 第一展墙':'MURO 02 · 第二展墙'} / ${p.institution}</span><span>OBRA / 作品 ${String(p.id).padStart(2,'0')} / 06</span></div>
+   <div class="poster-stage" data-stage="${p.id}"><div class="poster-wrap"><img src="${p.image}" alt="${p.alt}" loading="lazy" referrerpolicy="no-referrer"><div class="markers" aria-hidden="true"></div></div><div class="image-fallback">${p.title}<br><small style="font:12px var(--sans)">VISTA NO DISPONIBLE · 图片暂不可用</small></div></div>
+   <div class="art-caption"><span>${p.artist} · ${p.year}</span><button data-open="${p.id}">AMPLIAR OBRA · 放大作品 ↗</button></div>
+  </div>
+  <div class="work-copy" data-big="${String(p.id).padStart(2,'0')}">
+   <div class="work-index">${String(p.id).padStart(2,'0')} / 06 · ${p.institution}</div>
+   <h3 class="work-title">${p.title}</h3><div class="work-subtitle"><span class="cn">${p.titleCn}</span><span class="es">${p.subtitle}</span></div>
+   <div class="metadata"><span>${p.year}</span><span>${p.artist}</span><span>${p.institution}</span><span>${p.medium}</span></div>
+   <p class="work-description"><span class="cn">${p.introCn}</span><span class="es">${p.introEs}</span></p>
+   <div class="analysis-label"><span class="cn">选择一个维度，拆解这张海报</span><span class="es">Elige una capa para analizar el cartel</span></div>
+   <div class="layer-tabs" role="tablist" aria-label="Capas de análisis / 赏析维度">${p.layers.map((l,i)=>`<button class="layer-tab ${i===0?'active':''}" role="tab" aria-selected="${i===0?'true':'false'}" data-work-id="${p.id}" data-layer="${i}">${l.key}</button>`).join('')}</div>
+   <div class="analysis-panel" aria-live="polite"><div><h4>${p.layers[0].title}</h4><p><span class="cn">${p.layers[0].cn}</span><span class="es">${p.layers[0].es}</span></p></div><div class="analysis-count">01 / 0${p.layers.length}</div></div>
+   <div class="work-foot"><div class="work-source">FICHA / 馆藏记录：<a href="${p.sourceUrl}" target="_blank" rel="noopener">${p.source}</a></div>${p.id<6?`<a class="next-work" href="#work-${p.id+1}">SIGUIENTE · 下一张</a>`:`<a class="next-work" href="#epilogue">EPÍLOGO · 结语</a>`}</div>
+  </div>
+ </div>
+</article>`;
+document.getElementById('works-a').innerHTML=posters.filter(p=>p.wall===1).map(makeWork).join('');
+document.getElementById('works-b').innerHTML=posters.filter(p=>p.wall===2).map(makeWork).join('');
+function showLayer(workId,index){
+ const p=posters.find(x=>x.id===Number(workId));if(!p)return;
+ const section=document.querySelector(`[data-work="${workId}"]`);if(!section)return;
+ const layer=p.layers[Number(index)];
+ section.querySelectorAll('.layer-tab').forEach(btn=>{const active=Number(btn.dataset.layer)===Number(index);btn.classList.toggle('active',active);btn.setAttribute('aria-selected',active?'true':'false')});
+ section.querySelector('.analysis-panel').innerHTML=`<div><h4>${layer.title}</h4><p><span class="cn">${layer.cn}</span><span class="es">${layer.es}</span></p></div><div class="analysis-count">0${Number(index)+1} / 0${p.layers.length}</div>`;
+ section.querySelector('.markers').innerHTML=layer.markers.map((m,i)=>`<div class="marker ${m.flip?'flip':''}" style="--x:${m.x}%;--y:${m.y}%"><i>${String(i+1).padStart(2,'0')}</i><span>${m.label}</span></div>`).join('');
+}
+document.querySelectorAll('.layer-tab').forEach(btn=>btn.addEventListener('click',()=>showLayer(btn.dataset.workId,btn.dataset.layer)));
+posters.forEach(p=>showLayer(p.id,0));
+document.querySelectorAll('.poster-stage img').forEach(img=>img.addEventListener('error',()=>img.closest('.poster-stage').classList.add('failed')));
+const modal=document.getElementById('imageModal'),modalImage=document.getElementById('modalImage'),modalCaption=document.getElementById('modalCaption');
+document.querySelectorAll('[data-open]').forEach(btn=>btn.addEventListener('click',()=>{const p=posters.find(x=>x.id===Number(btn.dataset.open));modalImage.src=p.image;modalImage.alt=p.alt;modalCaption.textContent=`${p.title} / ${p.artist} / ${p.year}`;modal.classList.add('open');document.body.style.overflow='hidden'}));
+function closeModal(){modal.classList.remove('open');document.body.style.overflow='';modalImage.src=''}
+document.getElementById('modalClose').addEventListener('click',closeModal);modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+// Natural scrolling only: no scroll-snap and no wheel hijacking. Anchor navigation remains smooth and user-controlled.
+const bar=document.getElementById('progressBar');const watched=['top','intro','work-1','work-2','work-3','wall-b','work-4','work-5','work-6','epilogue'].map(id=>document.getElementById(id));const dots=[...document.querySelectorAll('#sideIndex a')];
+function updateProgress(){const max=document.documentElement.scrollHeight-window.innerHeight;bar.style.width=`${max>0?window.scrollY/max*100:0}%`}
+window.addEventListener('scroll',updateProgress,{passive:true});updateProgress();
+const navObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){const i=watched.indexOf(entry.target);dots.forEach((dot,n)=>dot.classList.toggle('active',n===i))}}),{rootMargin:'-38% 0px -48% 0px',threshold:0});watched.forEach(el=>el&&navObserver.observe(el));
+const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');revealObserver.unobserve(entry.target)}}),{threshold:.06});document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
+</script>
+</body>
+</html>
